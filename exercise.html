@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Health Track Jarvis - Atividades</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <link href="assets/img/favicon.ico" rel="icon">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <header id="header" class="fixed-top d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <div class="logo">
+                <h1 class="text-light"><a href="index.html"><span>Health Track</span></a></h1>
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto " href="index.html">Home</a></li>
+                    <li><a class="getstarted scrollto" href="login.html">Login!</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+
+        </div>
+    </header>
+
+    <main id="main">
+
+        <section class="breadcrumbs">
+            <div class="container">
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2>Registro de atividades</h2>
+                    <ol>
+                        <li><a href="index.html">Home</a></li>
+                        <li>Registro de atividades</li>
+                    </ol>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="registration" class="d-flex align-items-center">
+            <div class="row">
+                <div class="col-md-2">
+                    <div id="activity">
+                        <form action="main.jsp" method="post">
+                            <div class="mb-3">
+                                <h3>Cadastrar atividade</h3>
+                                <label for="exampleInputEmail1" class="form-label">Data </label>
+                                <input type="text" name="data" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="dataatividade">
+                                <div id="dataatividade" class="form-text"></div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Horário</label>
+                                <input type="text" name="Horário" class="form-control" id="exampleInputPassword1">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Intensidade</label>
+                                <input type="text" name="Horário" class="form-control" id="exampleInputPassword1">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Duracao</label>
+                                <input type="text" name="Horário" class="form-control" id="exampleInputPassword1">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Calorias</label>
+                                <input type="text" name="Horário" class="form-control" id="exampleInputPassword1">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Observação</label>
+                                <input type="text" name="Horário" class="form-control" id="exampleInputPassword1">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Tipo de Exercício</label>
+                                <input type="text" name="Horário" class="form-control" id="exampleInputPassword1">
+                            </div>
+                            <div class="Esp-10px">
+
+                                <button type="submit" class="btn btn-primary btn-conf">Cadastrar
+                                </button>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-md-9 align-self-center order-md-2 order-1 mb-md-0 mb-4 Esp-10px">
+                    <div class="container-fluid px-4  ">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nº</th>
+                                    <th scope="col">DATA</th>
+                                    <th scope="col">HORÁRIO</th>
+                                    <th scope="col">INTENSIDADE </th>
+                                    <th scope="col">DURACAO</th>
+                                    <th scope="col">CALORIAS</th>
+                                    <th scope="col">OBSERVACAO</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+			
+                                <!------------ Adicionando L�gica get da tabela ------------>
+                                <% 
+                                for 
+                                
+                                (EXERCICIO c : exercicios) {
+                                    
+                                %>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td><%=c.getDT_REGISTRO() %></td>
+                                        <td><%=c.getNM_HORA() %></td>
+                                        <td><%=c.getINTENSIDADE()%></td>
+                                        <td><%=c.getDURACAO() %></td>
+                                        <td><%=c.getCALORIAS() %></td>
+                                        <td><%=c.getOBSERVACAO()%></td>
+                                    </tr>
+                                <% } %>
+                                </tbody>
+                                </table>
+                    
+                            </div>
+        </section>
+
+    </main>
+
+    <footer id="footer">
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h3>Health Track Jarvis</h3>
+                        <p>
+                            FIAP <br>
+                            Av. Lins de Vasconcelos, 1222 e 1264<br>
+                            São Paulo - SP <br><br>
+                            <strong>Telefone/ WhatsApp:</strong> +11 99999 9999<br>
+                            <strong>Email:</strong> jarvis@email.com<br>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Links Úteis</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Serviços</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Termos de serviço</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Políticas de privacidade</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Nossos serviços</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Nos siga nas redes sociais</h4>
+                        <p>Fique atento as nossas atualizações</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
